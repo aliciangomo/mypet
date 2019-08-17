@@ -16,7 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-#MYGEMS
+#MY_GEMS
 gem 'devise'
 
 

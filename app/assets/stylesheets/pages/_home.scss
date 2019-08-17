@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+
+.home-container {
+  padding: 5vh 7vw;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 10px;
+}
+
+.search > .button-primary {
+  margin-right: 10px;
+}

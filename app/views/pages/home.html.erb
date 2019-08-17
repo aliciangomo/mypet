@@ -1,0 +1,80 @@
+<div class="banner">
+  <div class="banner-container">
+    <h1>Look your best while getting fit.</h1>
+    <div class="search">
+      <%= submit_tag "Search", class: "btn button-primary" %>
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mt-2 input_field",
+          placeholder: "What are you looking for?"
+        %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="home-container">
+  <h2 class="purple_subtitle">What is Sport Stop</h2>
+  <p class="main_content">Your one stop shop for fitness and beauty, or as we call it… feauty!
+  Meet all your sport needs with original designs and the best prices.</p>
+
+<div class="category-cards">
+  <div class="category-card">
+    <img src="../../../assets/images/pexels-photo-414012.jpeg" alt="">
+    <div class="category-text">
+      <h3>Leggins</h3>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="pexels-photo-414012.jpeg" alt="">
+    <div class="category-text">
+      <h3>Leggins</h3>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="pexels-photo-414012.jpeg" alt="">
+    <div class="category-text">
+      <h3>Leggins</h3>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="pexels-photo-414012.jpeg" alt="">
+    <div class="category-text">
+      <h3>Leggins</h3>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="pexels-photo-414012.jpeg" alt="">
+    <div class="category-text">
+      <h3>Leggins</h3>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="pexels-photo-414012.jpeg" alt="">
+    <div class="category-text">
+      <h3>Leggins</h3>
+    </div>
+  </div>
+</div>
+
+  <h2 class="purple_subtitle">How does it work</h2>
+  <p class="main_content">Buying fitness clothing and accessories with Sport Stop is easy and convenient. In 3 steps your new fitness apparel will be on your way.</p>
+
+
+  <h2 class="purple_subtitle">Why shop at Sport Stop</h2>
+  <div class="main_content">
+    <p>We curate fitness apparel, shoes and accessories from multiple sources to provide a selected collection of unique style! Our prices are competitive and we have very transparent policies for refunds.</p>
+      <br>
+    <p>To provide you with the best prices we ship your items from various locations and therefore our shipping period varies from a few days to up to 2-4 weeks.</p>
+    <br>
+    <p>However we are told the wait is worth it! :)</p>
+    <br>
+    <p>We are always open to suggestions to improve our service to contact us with any suggestions and/or comments.</p>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.category-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  height: 90vh;
+}
+
+.category-card {
+border-radius: 11px;
+overflow: hidden;
+background: white;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+position: relative;
+}
+
+.category-card img {
+width: 100%;
+object-fit: cover;
+}
+
+.category-text {
+border-radius: 2px;
+background-color: $black;
+opacity: 0.8;
+height: 10vh;
+position: absolute;
+bottom: 0;
+width: 100%;
+}
+
+.category-text h3 {
+font-size: 32;
+font-weight: 700;
+color: $white;
+text-align: center;
+margin-top: 5%;
+}

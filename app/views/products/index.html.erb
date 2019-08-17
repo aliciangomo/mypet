@@ -1,0 +1,14 @@
+<% if params[:query].present? %>
+    <h1 class="index-title" id="search-index-heading">Your Search Results for:<strong> <%= params[:query] %></strong> </h1>
+  <% else %>
+    <h1 class="index-title" id="search-index-heading">Explore our products:</h1>
+  <% end %>
+
+<% @products.each do |product| %>
+  <p><%= product.name %> | <%= number_to_currency product.price %>
+  <%= form_for @order_item do |f| %>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <%= f.number_field :quantity %>
+    <%= f.submit "Add to cart" %>
+  <% end %></p>
+<% end %>
