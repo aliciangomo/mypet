@@ -1,7 +1,7 @@
 .footer {
-  background: #F4F4F4;
+  background-color: #D8D8D8;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: space-around;
   padding: 16px 16px;
   margin-top: 0px;
@@ -14,19 +14,18 @@
     padding: 2em 50px;
   }
 }
-.footer-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.footer-links a {
+// .footer-links {
+//   display: flex;
+//   justify-content: space-around;
+// }
+.footer a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.45;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   padding: 0px;
 }
-.footer-links a:hover {
+.footer a:hover {
   opacity: 1;
 }
 
