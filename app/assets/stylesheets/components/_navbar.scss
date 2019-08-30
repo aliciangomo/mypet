@@ -4,9 +4,17 @@
   padding: 4px;
   border: $gray 1px solid;
   border-radius: 4px;
+}
+
+#language i {
+  font-size: 18px;
   color: $dark-gray;
 }
 
+
+#lang {
+  color: $dark-gray;
+}
 
 // .navbar {
 //   position: sticky;
