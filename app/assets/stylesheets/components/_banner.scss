@@ -1,0 +1,31 @@
+.banner {
+  background-image: url("pexels-photo-866019.jpeg");
+  background-color: $dark-gray;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 5vh;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.banner-container {
+  bottom: 2vh;
+  text-align: center;
+  padding: 0px;
+  right: 20px
+}
+
+.banner h1 {
+  margin: 0px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,1.2);
+  font-size: 40px;
+  font-weight: bold;
+  font-family: $body-font;
+  letter-spacing: 2px;
+  // @include media-breakpoint-up(md) {
+  //   font-size: 80px;
+  // }
+}
