@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_08_31_145149) do
 
   # These are extensions that must be enabled in order to support this database
@@ -45,10 +46,10 @@ ActiveRecord::Schema.define(version: 2019_08_31_145149) do
     t.string "category"
     t.string "name"
     t.string "description"
-    t.string "color"
-    t.string "size"
     t.integer "price"
     t.integer "rating"
+    t.text "colors", array: true
+    t.text "sizes", array: true
   end
 
   create_table "users", force: :cascade do |t|
