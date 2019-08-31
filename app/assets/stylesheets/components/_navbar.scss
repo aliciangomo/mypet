@@ -1,9 +1,28 @@
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-left: 0;
+
+}
+
+.navbar-left {
+  display: flex;
+  justify-content: start;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: end;
+}
 
 #language {
   margin: 4px;
   padding: 4px;
   border: $gray 1px solid;
   border-radius: 4px;
+  margin-left: 20px;
 }
 
 #language i {
@@ -14,6 +33,13 @@
 
 #lang {
   color: $dark-gray;
+  border: none;
+}
+
+li i {
+  font-size: 18px;
+  color: $dark-gray;
+  padding: 8px;
 }
 
 // .navbar {
