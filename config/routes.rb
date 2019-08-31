@@ -9,9 +9,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  resources :orders, only: [:create, :update] do
-    resources :order_items
-  end
+  resources :orders, only: [:create, :update]
+
+  resources :order_items
 
   resources :photos, only: [:destroy]
+
+  resource :cart, only: [:show]
 end

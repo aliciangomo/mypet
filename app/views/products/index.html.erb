@@ -1,14 +1,32 @@
-<% if params[:query].present? %>
-    <h1 class="index-title" id="search-index-heading">Your Search Results for:<strong> <%= params[:query] %></strong> </h1>
-  <% else %>
-    <h1 class="index-title" id="search-index-heading">Explore our products:</h1>
-  <% end %>
+<% if @products.empty?  %>
 
-<% @products.each do |product| %>
-  <p><%= product.name %> | <%= number_to_currency product.price %>
-  <%= form_for @order_item do |f| %>
-    <%= f.hidden_field :product_id, value: product.id %>
-    <%= f.number_field :quantity %>
-    <%= f.submit "Add to cart" %>
-  <% end %></p>
+<p class="inventory_message"><i class="fas fa-spinner"></i></p>
+<p class="inventory_message"> Sorry! We are currently making a selection of amazing products to offer you! We'll have it very shortly. In the meanwhile...why not check one of out other great products!</p>
+
+<% else %>
+<div class="product-cards">
+  <% @products.each do |product| %>
+
+    <%= link_to product_path(product) do %>
+      <div class="product-card">
+        <%#= render 'photocarousel', photos: provider.photos %>
+        <%= image_tag("pexels-photo-869243.jpeg")%>
+        <div class="product-card-infos">
+          <div>
+            <h2><%= product.name %></h2>
+            <p><%= product.description %></p>
+          </div>
+          <h2 class="product-card-pricing"><%= number_to_currency product.price %></h2>
+        </div>
+        <p> <%= form_for @order_item do |f| %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.number_field :quantity %>
+          <%= f.submit "Add to cart", :id => "order-form-button"%>
+        <% end %></p>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
 <% end %>
+
+

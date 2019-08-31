@@ -13,14 +13,29 @@
 }
 
 .form-control p {
-  color: $gray;
-  opacity: 0.7;
-  margin: 0px;
-  font-family: $body-font;
-  font-size: 20px;
+  background-color: $gray;
+  border: 1px solid $gray;
+  border-opacity: 0.7;
+   font-size: 20px;
 }
 
 .search .button-primary {
   margin-top: 20px;
   font-size: 20px;
+}
+
+#order_item_quantity {
+  background-color: $light-gray;
+  border: 1px solid $gray;
+  height: 40px;
+  width: 80px;
+  color: $gray;
+  opacity: 0.7;
+  margin-left: 1vw;
+  font-family: $body-font;
+  font-size: 16px;
+}
+
+#new_order_item {
+  padding-bottom: 5px;
 }
