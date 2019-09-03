@@ -1,28 +1,61 @@
-
 <div class="show-container">
 
   <div class="product-details">
       <div class="product-carrousel">
-
+      <%= image_tag ("pexels-photo-1027130.jpeg")%>
+      <%#= render 'photocarousel', photos: @provider.photos %>
       </div>
 
       <div class="product-infos">
-        <h2>@product.name.capitalise</h2>
-        <p>@product.description</p>
+        <h2><%= @product.name.capitalize %></h2>
+        <p><%= @product.description %></p>
 
-        <p><<strong>Available colors</strong></p>
-        <ul class="available-colors">
-         <li>@product.color</li>
-         <li></li>
-         <li></li>
-        </ul>
+        <p class="subtitle"><strong>Available colors</strong></p>
+         <% @product.colors.each do |color| %>
+            <ul class="available">
+               <li class="available-item"><div class="color-thumb" style="background-color: <%=color%>"><%color%></div></li>
+            </ul>
+            <% end %>
 
-        <p><<strong>Available sizes</strong></p>
+        <p class="subtitle"><strong>Available sizes</strong></p>
+         <% @product.sizes.each do |size| %>
+            <ul class="available">
+               <li class="available-item"><%= size %></li>
+            </ul>
+          <% end %>
       </div>
   </div>
 
   <div class="product-reviews">
-
+    <div>
+        <p class="reviews-title"><strong>Reviews</strong></p>
+        <% if @product.reviews.blank? %>
+        <p class="reviews-statement">Be the first to leave a review for <%= @product.name %></p>
+        <% else %>
+        <p class="reviews-statement">Leave a review for <%= @product.name %></p>
+        <% end %>
+      </div>
+      <button class="button secondary btn-light"><%= link_to 'Add a new review', new_product_review_path(@product), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
+    </div>
+    <% if @product.reviews.count != 0 %>
+        <div id="reviews">
+          <% @product.reviews.each do |review| %>
+          <% review.rating.to_i.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - review.rating.to_i).times do %>
+          <i class="far fa-star"></i>
+          <% end %>
+          <p class="review-content"> "<%= review.content %>"</p>
+          <% end %>
+        </div>
+    <% else %>
+        <div class="provider-show-description">
+          <p>It looks like <%= @product.name %> doesn't have any reviews yet...</p>
+          <p>Feel free to add one.</p>
+        </div>
+    <% end %>
+    <%= render "reviews/new", review: @review, product: @product %>
   </div>
 
 </div>

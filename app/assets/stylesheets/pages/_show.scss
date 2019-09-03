@@ -1,0 +1,115 @@
+
+.show-container {
+  margin: 7vw 5vh 5vw 5vh
+}
+
+.product-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 2vh 2vh;
+}
+
+.product-carrousel {
+  width: 50vw;
+  height: 60vh;
+}
+
+.product-carrousel img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-infos {
+  width: 50vw;
+  height: 60vh;
+  padding: 2vh 2vw;
+}
+
+.product-infos h2 {
+  font-size: 28px;
+}
+
+.product-infos p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.product-infos .subtitle {
+  font-size: 20px;
+  margin: 3vh 0 2vh 0;
+}
+
+.available {
+  list-style-type: none;
+  display: inline;
+  padding: 0;
+}
+
+.available-item {
+  display: inline-block;
+  margin: 0;
+  padding-right: 3vw;
+  width: 2vh;
+  height: 2vw;
+  color: $black;
+}
+
+.available li div {
+  margin: 0;
+  padding: 0;
+}
+
+.color-thumb {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.product-reviews {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 2vw;
+}
+
+.reviews-title {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.reviews-statement {
+  font-size: 18px;
+}
+
+.review-content {
+  font-size: 18px;
+}
+
+#reviews {
+  padding: 2vh 2vw;
+}
+
+#reviews .fas {
+  color: $purple;
+}
+
+#reviews .far {
+  color: $light-purple;
+}
+
+.btn-light {
+  color: $black;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  height: 50%;
+  align-items: center;
+}
+
+.btn-light a {
+  color: $black;
+}
+.btn-light a :hover {
+  color: $purple;
+}
