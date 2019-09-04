@@ -19,6 +19,7 @@ gem 'webpacker'
 #MY_GEMS
 gem 'nokogiri', '>= 1.10.4'
 gem 'money-rails'
+gem 'stripe'
 
 
 group :development do
