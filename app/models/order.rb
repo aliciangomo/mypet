@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
   before_save :update_total
   before_create :update_status
+  monetize :amount_cents
 
   def calculate_total
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
