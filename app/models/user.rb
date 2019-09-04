@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :products, through: :orders
   has_many :orders, dependent: :destroy
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   def self.from_omniauth(auth)
     # Either create a User record or update it based on the provider (Google) and the UID

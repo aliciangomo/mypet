@@ -6,15 +6,15 @@ class OrderItemsController < ApplicationController
   # end
 
   def new
-    @item = @order.order_items.new(item_params)
+    # @item = @order.order_items.new(item_params)
   end
 
   def create
     @order = current_order
     @item = @order.order_items.new(item_params)
-    @order.save!
+    @order.user = current_or_guest_user
+    @order.save
     session[:order_id] = @order.id
-    raise
     redirect_to cart_path
   end
 
