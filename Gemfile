@@ -17,8 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 
 #MY_GEMS
-gem 'devise'
 gem 'nokogiri', '>= 1.10.4'
+gem 'money-rails'
 
 
 group :development do

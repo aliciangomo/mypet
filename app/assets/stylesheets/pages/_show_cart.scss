@@ -50,3 +50,86 @@
   color: $dark-gray;
   font-weight: 700;
 }
+
+.cart_buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkout_buttons {
+  width: 50%;
+  display: block;
+  margin-left: 5vw;
+  margin-top: 8vh;
+}
+
+#checkout-form-button {
+  border-radius: 5px;
+  width: 100%;
+  background-color: $purple;
+  color: $white;
+  height: 7vh;
+  font-weight: bold;
+  font-size: 18px;
+  font-style: $body-font;
+  margin-top: 2vh;
+  box-shadow: none;
+}
+
+#checkout-form-button a {
+  color: $white
+}
+
+
+#checkout-form-button:hover {
+  color: $white
+}
+
+#paypal-button {
+  border-radius: 5px;
+  width: 100%;
+  background-color: #F8BF38;
+  height: 7vh;
+  font-weight: bold;
+  font-size: 18px;
+  font-style: $body-font;
+  margin-top: 2vh;
+  box-shadow: none;
+  color: #003083;
+}
+
+#paypal-button a {
+  color: #003083;
+}
+
+#paypal-button:hover {
+  background-color: #003083;
+}
+
+#continue_shopping {
+  border-radius: 5px;
+  width: 50%;
+  background-color: $gray;
+  color: $dark-gray;
+  height: 7vh;
+  font-weight: bold;
+  font-size: 18px;
+  font-style: $body-font;
+  margin-right: 2vw;
+  margin-top: 10vh;
+  box-shadow: none;
+}
+
+#continue_shopping a {
+  color: $dark-gray;
+  text-decoration: none;
+}
+
+#continue_shopping a:hover {
+  color: $black;
+  text-decoration: none;
+}
+#continue_shopping:hover {
+  background-color: $dark-gray;
+}
+

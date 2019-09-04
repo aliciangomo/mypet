@@ -30,10 +30,21 @@
     <% end %>
   </div>
   <hr>
-  <p class="cart_subtotal">Your Total: <%= number_to_currency current_order.total_price %></p>
+  <p class="cart_subtotal"> Subtotal: <%= number_to_currency current_order.total_price %></p>
 
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
 
+<% if @order_items.any? %>
+<div class="cart_buttons">
+  <button id="continue_shopping"><%= link_to 'Continue shopping', root_path %></button>
+  <div class="checkout_buttons">
+  <button id="checkout-form-button"><%= link_to 'Checkout' %></button>
+  <button id="paypal-button"><img src="" alt="Paypal"></button>
+  </div>
+</div>
+<% else %>
+<p>Explore our products!</p>
+<% end %>
 </div>
