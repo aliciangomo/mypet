@@ -18,7 +18,7 @@
           </div>
           <h2 class="product-card-pricing"><%= number_to_currency product.price %></h2>
         </div>
-        <p> <%= form_for @order_item do |f| %>
+        <p> <%= form_for([product, @order_item]) do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
           <%= f.number_field :quantity %>
           <%= f.submit "Add to cart", :id => "order-form-button"%>

@@ -2,8 +2,8 @@
 
   <div class="product-details">
       <div class="product-carrousel">
-      <%= image_tag ("pexels-photo-1027130.jpeg")%>
-      <%#= render 'photocarousel', photos: @provider.photos %>
+        <%= image_tag ("pexels-photo-1027130.jpeg")%>
+        <%#= render 'photocarousel', photos: @provider.photos %>
       </div>
 
       <div class="product-infos">
@@ -23,6 +23,27 @@
                <li class="available-item"><%= size %></li>
             </ul>
           <% end %>
+
+        <div class="order-form">
+          <div class="order_item_quantity">
+            <div id="add_quantity">
+              <i class="fas fa-minus"></i>
+              <p class="product_quantity"> 1 </p>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="order_item_total">
+              <p>$</p>
+              <p id="product_price"><%=@product.price%></p>
+              <p id="total_price">18</p>
+            </div>
+          </div>
+
+          <%= form_for([@product, @order_item]) do |f| %>
+          <%= f.hidden_field :product_id, value: @product.id %>
+          <%= f.hidden_field :quantity, :id => "order_item_quantity" %>
+          <%= f.submit "Add to cart", :id => "show-form-button" %>
+          <% end %>
+        </div>
       </div>
   </div>
 

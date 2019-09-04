@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   resources :products do
     resources :photos, only: [:create, :index, :new]
     resources :reviews, only: [:new, :create]
+    resources :order_items, only: [:new, :create, :destroy]
   end
 
   resources :orders, only: [:create, :update]
 
-  resources :order_items
+
 
   resources :photos, only: [:destroy]
 
