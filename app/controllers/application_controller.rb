@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include AuthorizationHelper
   protect_from_forgery with: :exception
   helper_method :current_order
   before_action :authenticate_user!

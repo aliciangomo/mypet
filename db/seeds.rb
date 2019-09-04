@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
-product1 = Product.create({:name=>"blue leggins", :price => 18, :category=>"leggins" })
-product2 = Product.create({:name=>"NIKE leggins", :price => 23, :category=>"leggins" })
-product3 = Product.create({:name=>"ADIDAS shoes", :price => 15.50, :category=>"shoes" })
-product4 = Product.create({:name=>"Yoga mat", :price => 10, :category=>"sport accessories" })
-product5 = Product.create({:name=>"Weights", :price => 32, :category=>"sport accessories" })
+
+product1 = Product.create({:name=>"blue leggins", :price => 18, :category=>"leggins", :colors=>["#4359a1","#c41f56"], :sizes=>["XL", "L", "M", "S"], :description=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." })
+product2 = Product.create({:name=>"NIKE leggins", :price => 23, :category=>"leggins", :colors=>["#4359a1","#c41f56"], :sizes=>["XL", "L", "M", "S"], :description=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." })
+product3 = Product.create({:name=>"ADIDAS shoes", :price => 15.50, :category=>"shoes", :colors=>["#4359a1","#c41f56"], :sizes=>[34, 40, 46, 50], :description=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." })
+product4 = Product.create({:name=>"Yoga mat", :price => 10, :category=>"sport accessories", :colors=>["#4359a1","#c41f56"], :sizes=>["XL", "L", "M", "S"], :description=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." })
+product5 = Product.create({:name=>"Weights", :price => 32, :category=>"sport accessories", :colors=>["#4359a1","#c41f56"], :sizes=>["XL", "L", "M", "S"], :description=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." })
 
 puts "Total number of products: #{Product.all.count}"
 puts "Product names: #{Product.all.pluck("name")}"
@@ -38,3 +39,10 @@ order_item7 = OrderItem.create(product: product5, order: order4, quantity: 1)
 order_item8 = OrderItem.create(product: product5, order: order1, quantity: 1)
 
 puts "8 order items created. Seed complete"
+
+review1 = Review.create(content: "Absolutely brilliant", rating: 5, product: product1)
+review2 = Review.create(content: "Absolutely brilliant", rating: 3, product: product1)
+review3 = Review.create(content: "Very good quality", rating: 5, product: product2)
+review4 = Review.create(content: "Great service", rating: 2, product: product2)
+
+puts "reviews added"

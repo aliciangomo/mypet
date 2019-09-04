@@ -1,11 +1,21 @@
 class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
+  # def index
+  #   @order_items = current_order.order_items
+  #   # @order.reviews = OrderItem.all.where("order, ?", current_order)
+  # end
+
+  def new
+    # @item = @order.order_items.new(item_params)
+  end
+
   def create
     @order = current_order
     @item = @order.order_items.new(item_params)
+    @order.user = current_or_guest_user
     @order.save
     session[:order_id] = @order.id
-    redirect_to products_path
+    redirect_to cart_path
   end
 
   def destroy
