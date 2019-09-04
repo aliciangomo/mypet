@@ -2,6 +2,51 @@
   margin: 7vw 5vh 5vw 5vh
 }
 
-.cart-container p {
+.cart-container {
   font-size: 18px;
+}
+
+.order_item_line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  // align-items: start;
+}
+
+.order_item_line p {
+  text-align: end;
+}
+
+.product_description {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.product_name_as_title {
+  font-size: 24px;
+  color: $black;
+}
+
+.fa-trash {
+  color: $dark-gray;
+}
+
+.fa-trash:hover {
+  color: $purple;
+}
+
+.cart_subtotal {
+  width: 100%;
+  font-size: 24px;
+  color: $black;
+  font-weight: 700;
+  text-align: end;
+}
+
+.column_description {
+  font-size: 18px;
+  color: $dark-gray;
+  font-weight: 700;
 }
