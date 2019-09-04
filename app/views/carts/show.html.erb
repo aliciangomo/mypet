@@ -1,11 +1,36 @@
 <div class="cart-container">
 
+<h2 class="purple_subtitle"> Your cart </h2>
+
+
+<div class="order_item_line">
+  <div class="product_description">
+    <p class="column_description"> Product description </p>
+  </div>
+  <p class="column_description"> Unit Price </p>
+  <p class="column_description"> Quantity </p>
+  <p class="column_description"> Total Price </p>
+</div>
+<hr>
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <p><%= item.product.name %> | <%= link_to "Delete", product_order_item_path(item, item.product.id), :data => {:confirm => "Are you sure you dont want this item?", :method => "delete"} %></p>
-    <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-  <% end %>
-  <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+    <div class="order_item_line">
+      <div class="product_description">
+        <div class="thumbnail">
+          <%= image_tag("pexels-photo-869243.jpeg", :class => "portrait") %>
+        </div>
+        <p class="product_name_as_title"><%= item.product.name %></p>
+        <%= link_to '<i class="fas fa-trash"></i>'.html_safe, product_order_item_path(item, item.product.id),
+          method: 'delete',
+          data: {confirm: "Are you sure you dont want this item?"} %>
+      </div>
+      <p> <%= number_to_currency item.product.price %></p>
+      <p> <%= item.quantity %> </p>
+      <p> <%= number_to_currency (item.product.price * item.quantity) %></p>
+    <% end %>
+  </div>
+  <hr>
+  <p class="cart_subtotal">Your Total: <%= number_to_currency current_order.total_price %></p>
 
 <% else %>
   <p>Your shopping cart is empty.</p>
