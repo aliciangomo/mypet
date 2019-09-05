@@ -4,6 +4,8 @@ class Order < ApplicationRecord
   before_save :update_total
   before_create :update_status
   monetize :amount_cents
+  enum status: { pending: "pending", paid: "paid", confirmed: "confirmed", completed: "completed",
+    declined: "declined", rejected: "rejected" }
 
   def calculate_total
     self.order_items.collect { |item| item.product.price * item.quantity }.sum

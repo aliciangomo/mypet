@@ -22,10 +22,10 @@ puts "Product3: #{product3.name} price: #{product3.price.round(2)}"
 puts "Product4: #{product4.name} price: #{product4.price.round(2)}"
 puts "Product5: #{product5.name} price: #{product5.price.round(2)}"
 
-order1 = Order.create(amount_cents: 7300, status: 5)
-order2 = Order.create(amount_cents: 1800, status: 5)
-order3 = Order.create(amount_cents: 3850, status: 5)
-order4 = Order.create(amount_cents: 4750, status: 5)
+order1 = Order.create(amount_cents: 7300, status: "pending")
+order2 = Order.create(amount_cents: 1800, status: "pending")
+order3 = Order.create(amount_cents: 3850, status: "pending")
+order4 = Order.create(amount_cents: 4750, status: "pending")
 
 puts "4 orders created"
 
