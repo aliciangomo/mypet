@@ -13,8 +13,24 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
+  # def current_order
+  #   if session[:order_id]
+  #     Order.find(session[:order_id])
+  #   else
+  #     Order.new
+  #   end
+  # end
+
+  # def current_order
+  #   if session[:order_id].nil?
+  #     Order.new
+  #   else
+  #     Order.find(session[:order_id])
+  #   end
+  # end
+
   def current_order
-    if session[:order_id]
+    if session[:order_id].nil?
       Order.find(session[:order_id])
     else
       Order.new

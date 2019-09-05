@@ -40,7 +40,7 @@
 <div class="cart_buttons">
   <button id="continue_shopping"><%= link_to 'Continue shopping', root_path %></button>
   <div class="checkout_buttons">
-  <button id="checkout-form-button"><%= link_to 'Checkout' %></button>
+  <button id="checkout-form-button"><%= link_to 'Checkout', new_order_payment_path(@order), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
   <button id="paypal-button"><img src="" alt="Paypal"></button>
   </div>
 </div>

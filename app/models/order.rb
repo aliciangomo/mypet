@@ -18,6 +18,6 @@ class Order < ApplicationRecord
   end
 
   def update_total
-    self.total_price = calculate_total
+    self.amount = calculate_total
   end
 end
