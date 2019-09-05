@@ -13,7 +13,7 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @item = @order.order_items.new(item_params)
     @order.user = current_or_guest_user
-    @order.save
+    @order.save!
     session[:order_id] = @order.id
     redirect_to cart_path
   end
@@ -30,7 +30,7 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.find(params[:id])
     @item.destroy
     @order.save
-    redirect_to cart_path
+    redirect_to cart_path(@order_id)
   end
 
 

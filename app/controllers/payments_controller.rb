@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_order
+  skip_before_action :authenticate_user!
 
   def new
   end
@@ -13,8 +14,8 @@ class PaymentsController < ApplicationController
   charge = Stripe::Charge.create(
     customer:     customer.id,   # You should store this customer id and re-use it.
     amount:       @order.amount_cents,
-    description:  "Payment for order #{@order.id}"
-    currency:     @order.total_amount.currency
+    description:  "Payment for order #{@order.id}",
+    currency:     @order.amount.currency,
   )
 
   @order.update(payment: charge.to_json, state: 'paid')
@@ -28,6 +29,6 @@ end
   private
 
   def set_order
-    @order = current_user.orders.where(state: 'pending').find(params[:order_id])
+    @order = current_or_guest_user.orders.where(status: 'pending').find(params[:order_id])
   end
 end

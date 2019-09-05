@@ -96,12 +96,9 @@
   display: flex;
   align-items: center;
   height: 7vh;
-}
-
-#add_quantity i {
- padding-right: 1vw;
- color: $black;
- font-weight: 400;
+  color: $black;
+  width: 7vw;
+  justify-content: space-between;
 }
 
 #product_price {
@@ -109,7 +106,7 @@
 }
 
 .order_item_quantity p {
- padding-right: 1vw;
+ // padding-right: 1vw;
  color: $black;
  margin: 0;
 }

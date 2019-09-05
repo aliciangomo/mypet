@@ -3,6 +3,8 @@
 <h2 class="purple_subtitle"> Your cart </h2>
 
 
+<% if @order_items.any? %>
+
 <div class="order_item_line">
   <div class="product_description">
     <p class="column_description"> Product description </p>
@@ -12,7 +14,7 @@
   <p class="column_description"> Total Price </p>
 </div>
 <hr>
-<% if @order_items.any? %>
+
   <% @order_items.each do |item| %>
     <div class="order_item_line">
       <div class="product_description">
@@ -27,24 +29,21 @@
       <p> <%= number_to_currency item.product.price %></p>
       <p> <%= item.quantity %> </p>
       <p> <%= number_to_currency (item.product.price * item.quantity) %></p>
-    <% end %>
   </div>
+   <% end %>
   <hr>
-  <p class="cart_subtotal"> Subtotal: <%= number_to_currency current_order.total_price %></p>
+  <p class="cart_subtotal"> Subtotal: <%= number_to_currency current_order.amount %></p>
+
+  <div class="cart_buttons">
+    <button id="continue_shopping"><%= link_to 'Continue shopping', root_path %></button>
+    <div class="checkout_buttons">
+    <button id="checkout-form-button"><%= link_to 'Checkout', new_order_payment_path(current_order), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
+    <button id="paypal-button"><img src="" alt="Paypal"></button>
+    </div>
+  </div>
 
 <% else %>
   <p>Your shopping cart is empty.</p>
-<% end %>
-
-<% if @order_items.any? %>
-<div class="cart_buttons">
-  <button id="continue_shopping"><%= link_to 'Continue shopping', root_path %></button>
-  <div class="checkout_buttons">
-  <button id="checkout-form-button"><%= link_to 'Checkout', new_order_payment_path(@order), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
-  <button id="paypal-button"><img src="" alt="Paypal"></button>
-  </div>
-</div>
-<% else %>
-<p>Explore our products!</p>
+  <p>Explore our products!</p>
 <% end %>
 </div>
