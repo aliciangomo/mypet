@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     resources :order_items, only: [:new, :create, :destroy]
   end
 
-  resources :orders, only: [:create, :update]
-
-
+  resources :orders, only: [:create, :update] do
+    resources :payments, only: [:new, :create]
+  end
 
   resources :photos, only: [:destroy]
 

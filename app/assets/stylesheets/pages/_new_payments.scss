@@ -1,0 +1,12 @@
+.payment_confirmation_timeline {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}

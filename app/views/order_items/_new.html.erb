@@ -1,0 +1,7 @@
+<h1>Order</h1>
+<ul>
+  <li>Status: <%= @order.status %></li>
+  <li>Item: <% @order_items.each do |item|%>
+      <%= item.product.name %></li>
+  <li>Total amount: <%= humanized_money_with_symbol(@order.total_amount) %></li>
+<ul>

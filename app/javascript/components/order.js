@@ -12,19 +12,20 @@ console.log(product_price.innerText);
 
 const setOrderQuantity = () => {
   let order_quantity = parseInt(product_quantity.innerText, 10);
-  // console.log(order_quantity);
+  console.log(order_quantity);
+  form_quantity.value = order_quantity;
   add.addEventListener('click', () => {
     order_quantity++;
     product_quantity.innerText = order_quantity;
     const price = parseInt(product_price.innerText, 10);
-    // console.log(price);
+    console.log(price);
     total_price.innerText = order_quantity * price;
-    // console.log(total_price);
+    console.log(total_price);
     // product_price.innerText = total_price;
     // console.log(product_price.innerText);
     // form_quantity.innerHTML = `<%= f.hidden_field :quantity, :id => "order_item_quantity"; value: ${order_quantity} %>`;
     form_quantity.value = order_quantity;
-    // console.log(form_quantity.value);
+    console.log(form_quantity.value);
   });
 
   // `<input id="order_item_quantity" type="hidden" name="order_item[quantity]" value="${order_quantity}">`
@@ -35,14 +36,14 @@ const setOrderQuantity = () => {
     product_quantity.innerText = order_quantity;
   }
     const price = parseInt(product_price.innerText, 10);
-    // console.log(price);
+    console.log(price);
     total_price.innerText = order_quantity * price;
-    // console.log(total_price);
+    console.log(total_price);
     // product_price.innerText = total_price;
     // console.log(product_price.innerText);
     // form_quantity.innerHTML = `<%= f.hidden_field :quantity, :id => "order_item_quantity"; value: ${order_quantity} %>`;
     form_quantity.value = order_quantity;
-    // console.log(form_quantity);
+    console.log(form_quantity);
   });
 
     // // product_quantity.innerText = order_quantity;
